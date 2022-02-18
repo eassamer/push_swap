@@ -21,13 +21,19 @@ void    swapb(t_s *s)
 void    sa(t_s *s)
 {
     if (s->size_a > 1)
+    {
         swapa(s);
+        printf("sa\n");
+    } 
 }
 
 void    sb(t_s *s)
 {
     if (s->size_b > 1)
+    {
         swapb(s);
+        printf("sb\n");
+    }
 }
 
 void    ss(t_s *s)
@@ -37,6 +43,7 @@ void    ss(t_s *s)
     {
         swapa(s);
         swapb(s);
+        printf("ss\n");
     }
 
 }

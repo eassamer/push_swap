@@ -19,16 +19,17 @@ void reverse_a(t_s *s, t_s *new_s)
         s->stack_b[i] = new_s->stack_b[i];
         i++;
     }
+    printf("pa\n");
 }
 
-void    pa(t_s *s)
+void    pb(t_s *s)
 {
     int i;
     t_s new_s;
 
     i = 0;
     new_s.stack_a = malloc(sizeof(int) * s->size_a - 1);
-    new_s.stack_b = malloc(sizeof(int) * s->size_b+ 1);
+    new_s.stack_b = malloc(sizeof(int) * s->size_b + 1);
     i = 1;
     new_s.stack_b[0] = s->stack_a[0];
     while (i < s->size_a)
@@ -66,16 +67,17 @@ void reverse_b(t_s *s, t_s *new_s)
         s->stack_a[i] = new_s->stack_a[i];
         i++;
     }
+    printf("pb\n");
 }
 
-void    pb(t_s *s)
+void    pa(t_s *s)
 {
     int i;
     t_s new_s;
 
     i = 0;
     new_s.stack_b = malloc(sizeof(int) * s->size_b - 1);
-    new_s.stack_a = malloc(sizeof(int) * s->size_a+ 1);
+    new_s.stack_a = malloc(sizeof(int) * s->size_a + 1);
     i = 1;
     new_s.stack_a[0] = s->stack_b[0];
     while (i < s->size_b)

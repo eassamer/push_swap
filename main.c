@@ -5,7 +5,6 @@ void create(int ac, char **av,t_s *s)
     int i;
     char *s0;
     char **s2;
-    int *arr;
 
     i = 1;
     s0 = ft_strdup("");
@@ -21,6 +20,7 @@ void create(int ac, char **av,t_s *s)
         s->size_a = ft_strlen2(s2);
         s->stack_a = translate(s->size_a, s2);
         s->size_b = 0;
+        s->stack_b = malloc (sizeof(s->stack_b));
     }
     else
         printf("ERROR");
@@ -29,7 +29,9 @@ void create(int ac, char **av,t_s *s)
 int main(int ac, char **av)
 {
     t_s s;
-    int i = 0;
+    int i;
+
+    i = 0;
     create(ac,av,&s);
     if (doublee(&s))
     {
@@ -38,9 +40,11 @@ int main(int ac, char **av)
     }
     if (sorted(s.stack_a, s.size_a) || s.size_a  < 1)
         return 0;
-    while (i < s.size_a)
-    {
-        printf("%d|",s.stack_a[i]);
-        i++;
-    }
+    sort(&s);
+    // printf("\n");
+    // while (i < s.size_a)
+    // {
+    //     printf("%d|",s.stack_a[i]);
+    //     i++;
+    // }
 }

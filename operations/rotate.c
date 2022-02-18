@@ -27,6 +27,7 @@ void    ra(t_s *s)
         i++;
     }
     reva(s,arr);
+    printf("ra\n");
 }
 
 void revb(t_s *s,int *arr)
@@ -56,6 +57,7 @@ void    rb(t_s *s)
         i++;
     }
     reva(s,arr);
+    printf("rb\n");
 }
 
 void rr(t_s *s)

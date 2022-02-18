@@ -13,6 +13,7 @@ void rra(t_s *s)
         i++;
     }
     reva(s,arr);
+    printf("rra\n");
 }
 
 void rrb(t_s *s)
@@ -28,10 +29,12 @@ void rrb(t_s *s)
         i++;
     }
     revb(s,arr);
+    printf("rrb");
 }
 
 void    rrr(t_s *s)
 {
     rra(s);
     rrb(s);
+    printf("rrr\n");
 }

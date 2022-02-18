@@ -15,7 +15,7 @@ int sorted(int *s,int size)
     int i;
 
     i = 0;
-    while(i + 1 < size - 1)
+    while(i + 1 < size)
     {
         if (s[i] > s[i + 1])
             return 0;
