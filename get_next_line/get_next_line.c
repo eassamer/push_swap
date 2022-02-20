@@ -6,7 +6,7 @@
 /*   By: eassamer <eassamer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 11:10:02 by eassamer          #+#    #+#             */
-/*   Updated: 2021/11/24 09:26:40 by eassamer         ###   ########.fr       */
+/*   Updated: 2022/02/19 09:28:24 by eassamer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_change_text(char *text)
 		return (NULL);
 	}
 	i = 0;
-	newtext = (char *)malloc(sizeof(char) * (ft_strlen(text) - len + 1));
+	newtext = (char *)malloc(sizeof(char) * (ft_strlen_gnl(text) - len + 1));
 	if (newtext == NULL)
 		return (NULL);
 	while (text[len++] != '\0')
@@ -72,7 +72,7 @@ char	*ft_read(char *text, int fd)
 	if (buff == NULL)
 		return (NULL);
 	n = 1;
-	while (!(ft_strchr(text, '\n')) && n != 0)
+	while (!(ft_strchr_gnl(text, '\n')) && n != 0)
 	{
 		n = read(fd, buff, BUFFER_SIZE);
 		if (n == -1)
@@ -81,7 +81,7 @@ char	*ft_read(char *text, int fd)
 			return (NULL);
 		}
 		buff[n] = '\0';
-		text = ft_strjoin(text, buff);
+		text = ft_strjoin_gnl(text, buff);
 	}
 	free(buff);
 	return (text);

@@ -6,7 +6,7 @@
 /*   By: eassamer <eassamer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 11:32:50 by eassamer          #+#    #+#             */
-/*   Updated: 2021/11/26 09:37:56 by eassamer         ###   ########.fr       */
+/*   Updated: 2022/02/19 09:28:19 by eassamer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@
 # include<sys/types.h>
 # include<sys/syscall.h>
 
-char	*ft_strjoin(char *s1, char *s2);
-size_t	ft_strlen(char *str);
-char	*ft_strchr(char *s, int c);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+size_t	ft_strlen_gnl(char *str);
+char	*ft_strchr_gnl(char *s, int c);
 char	*ft_read(char *text, int fd);
 void	ft_putstr_fd(char *s, int fd);
 char	*ft_just_a_line(char *text);

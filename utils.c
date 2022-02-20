@@ -1,80 +1,99 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eassamer <eassamer@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/20 13:01:04 by eassamer          #+#    #+#             */
+/*   Updated: 2022/02/20 14:54:39 by eassamer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int ft_strlen2(char **s)
+int	ft_strlen2(char **s)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(s[i])
-        i++;
-    return (i);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
 
-int sorted(int *s,int size)
+int	sorted(int *s, int size)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(i + 1 < size)
-    {
-        if (s[i] > s[i + 1])
-            return 0;
-        i++;
-    }
-    return 1;
+	i = 0;
+	while (i + 1 < size)
+	{
+		if (s[i] > s[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
-int *translate(int len, char **s)
+int	*translate(int len, char **s)
 {
-    int i;
-    int *arr;
+	int	i;
+	int	*arr;
 
-    i = 0;
-    arr = malloc(sizeof(int) * len);
-    while (i < len)
-    {
-        arr[i] = ft_atoi(s[i]);
-        i++;
-    }
-    return (arr);
+	i = 0;
+	arr = malloc(sizeof(int) * len);
+	while (i < len)
+	{
+		arr[i] = ft_atoi(s[i]);
+		i++;
+	}
+	i = 0;
+	while (i < len)
+	{
+		free(s[i]);
+		i++;
+	}
+	free(s);
+	return (arr);
 }
 
-int digit(char **a)
+int	digit(char **a)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    j = 0;
-    while (a[i])
-    {
-        while (a[i][j])
-        {
-            if (!ft_isdigit(a[i][j]))
-                return 0;
-            j++;
-        }
-        i++;
-    }
-    return (1);
+	i = 0;
+	j = 0;
+	while (a[i])
+	{
+		while (a[i][j])
+		{
+			if (!ft_isdigit(a[i][j]))
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
 }
 
-int doublee(t_s *s)
+int	doublee(t_s *s)
 {
-    int i;
-    int j;
+	int	i;
+	int	j;
 
-    i = 0;
-    while (i < s->size_a)
-    {
-        j = i + 1;
-        while (j < s->size_a)
-        {
-            if (s->stack_a[i] == s->stack_a[j])
-                return (1);
-            j++;
-        }
-        i++;
-    }
-    return (0);
+	i = 0;
+	while (i < s->size_a)
+	{
+		j = i + 1;
+		while (j < s->size_a)
+		{
+			if (s->stack_a[i] == s->stack_a[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }
